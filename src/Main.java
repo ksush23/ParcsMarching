@@ -69,6 +69,12 @@ public class Main {
 
         File outputfile = new File("image.jpg");
         ImageIO.write(image, "jpg", outputfile);
+
+
+/*
+        BufferedImage image = Marching.renderer(512, 512);
+        File outputfile = new File("image.jpg");
+        ImageIO.write(image, "jpg", outputfile);*/
     }
 
 }
