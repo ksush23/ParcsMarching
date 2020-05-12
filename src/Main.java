@@ -16,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         task curtask = new task();
-        curtask.addJarFile("KaratsubaParallel.jar");
+        curtask.addJarFile("MarchingParallel.jar");
 
         AMInfo info = new AMInfo(curtask, null);
         Scanner sc = new Scanner(new File(curtask.findFile("input.txt")));
