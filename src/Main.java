@@ -19,7 +19,6 @@ public class Main {
         curtask.addJarFile("MarchingParallel.jar");
 
         AMInfo info = new AMInfo(curtask, null);
-        Scanner sc = new Scanner(new File(curtask.findFile("input.txt")));
 
         int w = 512;
         int h = 512;
