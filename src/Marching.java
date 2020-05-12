@@ -28,7 +28,7 @@ public class Marching {
     }
 
     static double march(int x, int y) {
-        int rays = 16;
+        int rays = 4;
         int summary = 0;
         for (int i = 0; i < rays; i++) {
             double ray_x = (x + Math.random() - 0.5) / 512.;
@@ -44,7 +44,7 @@ public class Marching {
             double cx = 0.7;
             double cy = 0.2;
             double cz = -2.8;
-            for (int j = 0; j < 1024; j++) {
+            for (int j = 0; j < 512; j++) {
                 double d = dist(cx, cy, cz) * 0.1;
                 cx += ray_x * d;
                 cy += ray_y * d;

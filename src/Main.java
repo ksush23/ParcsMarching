@@ -34,7 +34,7 @@ public class Main {
             for (int j = 0; j < h; j++) {
                 xs.add(i);
                 ys.add(j);
-                if (xs.size() > 256) {
+                if (xs.size() > 4096) {
                     data_x.add(xs);
                     data_y.add(ys);
                     xs = new ArrayList<>();
