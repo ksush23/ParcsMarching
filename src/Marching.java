@@ -8,8 +8,8 @@ public class Marching {
         double sn = Math.sin(0.6);
         double xx = x * cs + y * sn;
         double yy = -x * sn + y * cs;
-        x = (xx - Math.floor(xx)) * 2 - 1;
-        y = (yy - Math.floor(yy)) * 2 - 1;
+        x = (x - Math.floor(x)) * 2 - 1;
+        y = (y - Math.floor(y)) * 2 - 1;
         z = (z - Math.floor(z)) * 2 - 1;
         return Math.sqrt(x * x + y * y + z * z) - 0.35;
     }
