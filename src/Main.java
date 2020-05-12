@@ -49,6 +49,8 @@ public class Main {
             point p = info.createPoint();
             channel c = p.createChannel();
             p.execute("MarchingParallel");
+            c.write(w);
+            c.write(h);
             c.write((Serializable) data_x.get(i));
             c.write((Serializable) data_y.get(i));
             channels.add(c);
