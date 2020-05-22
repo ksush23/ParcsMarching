@@ -3,11 +3,10 @@ import java.awt.image.BufferedImage;
 import static java.awt.image.BufferedImage.TYPE_INT_RGB;
 
 public class Marching {
+
+    public static final int rays = 4;
+
     static double dist(double x, double y, double z) {
-        double cs = Math.cos(0.6);
-        double sn = Math.sin(0.6);
-        double xx = x * cs + y * sn;
-        double yy = -x * sn + y * cs;
         x = (x - Math.floor(x)) * 2 - 1;
         y = (y - Math.floor(y)) * 2 - 1;
         z = (z - Math.floor(z)) * 2 - 1;
@@ -28,9 +27,9 @@ public class Marching {
     }
 
     static double march(int x, int y) {
-        int rays = 4;
         int summary = 0;
         for (int i = 0; i < rays; i++) {
+
             double ray_x = (x + Math.random() - 0.5) / 512.;
             double ray_y = (y + Math.random() - 0.5) / 512.;
             double ray_z = 1;
@@ -44,6 +43,7 @@ public class Marching {
             double cx = 0.7;
             double cy = 0.2;
             double cz = -2.8;
+
             for (int j = 0; j < 512; j++) {
                 double d = dist(cx, cy, cz) * 0.1;
                 cx += ray_x * d;

@@ -14,14 +14,15 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static final int w = 512;
+    private static final int h = 512;
+    private static final int batch_size = 4096;
+
     public static void main(String[] args) throws IOException {
         task curtask = new task();
         curtask.addJarFile("MarchingParallel.jar");
 
         AMInfo info = new AMInfo(curtask, null);
-
-        int w = 512;
-        int h = 512;
 
         List<Integer> xs = new ArrayList<>();
         List<Integer> ys = new ArrayList<>();
@@ -33,7 +34,7 @@ public class Main {
             for (int j = 0; j < h; j++) {
                 xs.add(i);
                 ys.add(j);
-                if (xs.size() > 4096) {
+                if (xs.size() > batch_size) {
                     data_x.add(xs);
                     data_y.add(ys);
                     xs = new ArrayList<>();
